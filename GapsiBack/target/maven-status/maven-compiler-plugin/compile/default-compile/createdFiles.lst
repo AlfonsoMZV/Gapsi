@@ -1,0 +1,6 @@
+com\mx\gapsi\controller\GapsiController.class
+com\mx\gapsi\repository\IGapsiRepository.class
+com\mx\gapsi\service\impl\GapsiServiceImpl.class
+com\mx\gapsi\GapsiBackApplication.class
+com\mx\gapsi\service\IGapsiService.class
+com\mx\gapsi\entity\Proveedores.class

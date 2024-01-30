@@ -1,0 +1,28 @@
+type Query {
+    obtieneProveedores: [Proveedores]
+}
+
+type Proveedores{
+    id:ID
+    estatus:String
+    nombre:String
+    fechaAlta:String
+    disponible:Boolean
+    descripcion:String
+    precio:Integer
+}
+
+type ProveedoresInput{
+    id:ID
+    estatus:String
+    nombre:String
+    fechaAlta:String
+    disponible:Boolean
+    descripcion:String
+    precio:Integer
+}
+
+type  Mutation{
+    creaProveedor(proveedor: ProveedoresInput!):Proveedores
+    eliminaProveedor(proveedorId: Integer): Boolean
+}
