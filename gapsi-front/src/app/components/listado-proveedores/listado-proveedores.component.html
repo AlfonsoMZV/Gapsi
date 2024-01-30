@@ -1,0 +1,73 @@
+<mat-grid-list cols="4" rowHeight="295px">
+    <mat-grid-tile colspan="4" rowspan="1">
+      <mat-card class="container-list">
+        <mat-card-content class="mat-small">
+          <div class="row">
+              <div class="col-md-10">
+              </div>
+              <div class="col-md-2">
+              </div>
+          </div>
+          <mat-card>
+              <mat-card-content class="mat-small">
+                  <div class="row">
+                      <div class="col-md-12">
+                        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">                
+                          <ng-container matColumnDef="estatus">
+                              <th mat-header-cell *matHeaderCellDef>Estatus </th>
+                              <td mat-cell *matCellDef="let element"> 
+                                <mat-icon style="color: green;" *ngIf="element.estatus == 'Alta'">check_box_outline_blank</mat-icon>
+                                <mat-icon style="color: red;" *ngIf="element.estatus == 'Baja'">check_box_outline_blank</mat-icon>
+                                <mat-icon style="color: orange;" *ngIf="element.estatus == 'Media'">check_box_outline_blank</mat-icon>
+                              </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="nombre">
+                              <th mat-header-cell *matHeaderCellDef>Nombre</th>
+                              <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                          </ng-container>
+      
+                          <ng-container matColumnDef="fechaAlta">
+                              <th mat-header-cell *matHeaderCellDef>Fecha Alta </th>
+                              <td mat-cell *matCellDef="let element"> {{element.fechaAlta}} </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="disponible">
+                              <th mat-header-cell *matHeaderCellDef> Disponible </th>
+                              <td mat-cell *matCellDef="let element"> 
+                                <label *ngIf="element.disponible">Si</label>
+                                <label *ngIf="!element.disponible">No</label>
+                              </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="descripcion">
+                              <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+                              <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+                          </ng-container>
+                          
+                          <ng-container matColumnDef="precio">
+                              <th mat-header-cell *matHeaderCellDef> Precio </th>
+                              <td mat-cell *matCellDef="let element"> ${{element.precio}} MXN </td>
+                          </ng-container>
+                          
+                            <ng-container matColumnDef="options">
+                                <th mat-header-cell *matHeaderCellDef> </th>
+                                <td mat-cell *matCellDef="let row">
+                                  <button mat-button type="button">
+                                    <mat-icon>vertical_align_bottom</mat-icon>
+                                  </button>
+                                  <button mat-button type="button">
+                                    <mat-icon>remove_red_eye</mat-icon>
+                                  </button>
+                                </td>
+                            </ng-container>
+                          </table>
+                          <mat-paginator [pageSizeOptions]="[5, 10, 20]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+                      </div>
+                  </div>
+              </mat-card-content>
+          </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
